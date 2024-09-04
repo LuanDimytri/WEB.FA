@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .rectangle {
+            width: 500px;
+            height: 400px; /* Altura do retângulo maior */
+            border: 2px solid black;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .header-text, .footer-text, .main-text {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .header-text {
+            top: 5%; /* Posiciona o texto dentro dos primeiros 10% */
+        }
+
+        .main-text {
+            top: 15%; /* Posiciona o texto "main" logo abaixo da linha superior */
+        }
+
+        .footer-text {
+            top: 85%; /* Posiciona o texto dentro dos últimos 10% */
+        }
+
+        .horizontal-line {
+            width: 100%; /* Ajuste a largura da linha conforme necessário */
+            border: none; /* Remove a borda padrão */
+            height: 2px; /* Altura da linha */
+            background-color: black; /* Cor da linha */
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .line-top {
+            top: 10%; /* Posiciona a linha horizontal a 10% do topo */
+        }
+
+        .line-bottom {
+            top: 80%; /* Posiciona a linha horizontal a 80% do topo */
+        }
+
+        .small-rectangle {
+            width: 100px; /* Largura do retângulo menor */
+            height: 150px; /* Altura do retângulo menor */
+            border: 2px solid black;
+            position: absolute;
+            left: 40px; /* Afasta o retângulo menor 40px da borda esquerda do retângulo maior */
+            top: 30%; /* Posiciona o retângulo menor a 30% do topo do retângulo maior */
+            background: transparent; /* Sem fundo, apenas o contorno */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .small-rectangle .text {
+            font-size: 16px; /* Tamanho da fonte dentro do retângulo menor */
+            font-weight: bold;
+        }
+
+        .large-rectangle {
+            width: 200px; /* Aumenta a largura do novo retângulo */
+            height: 150px; /* Altura do novo retângulo */
+            border: 2px solid black;
+            position: absolute;
+            left: 250px; /* Ajusta a posição para expandir à esquerda */
+            top: 30%; /* Alinha verticalmente com o retângulo menor */
+            background: transparent; /* Sem fundo, apenas o contorno */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .large-rectangle .inner-rectangle {
+            width: 80%; /* Largura dos retângulos internos */
+            height: 40%; /* Altura dos retângulos internos */
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: transparent; /* Sem fundo, apenas o contorno */
+            text-align: center;
+            font-size: 14px; /* Tamanho da fonte dentro dos retângulos internos */
+            font-weight: bold;
+        }
+    </style>
+    <title>Header, Main, Footer, and Multiple Rectangles Example</title>
+</head>
+<body>
+
+<div class="rectangle">
+    <div class="header-text">header</div>
+    <hr class="horizontal-line line-top"> <!-- Linha horizontal a 10% do topo -->
+    <div class="main-text">main</div> <!-- Texto "main" logo abaixo da linha superior -->
+    <hr class="horizontal-line line-bottom"> <!-- Linha horizontal a 80% do topo -->
+    <div class="footer-text">footer</div> <!-- Texto "footer" dentro dos últimos 10% -->
+    <div class="small-rectangle">
+        <div class="text">
+            <div>side</div>
+            <div>bar</div>
+        </div>
+    </div> <!-- Retângulo menor com o texto "side bar" -->
+    <div class="large-rectangle">
+        <div class="inner-rectangle">Article</div> <!-- Primeiro retângulo interno -->
+        <div class="inner-rectangle">Article</div> <!-- Segundo retângulo interno -->
+    </div> <!-- Novo retângulo expandido à esquerda -->
+</div>
+
+</body>
+</html>
